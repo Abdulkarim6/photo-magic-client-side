@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCart from '../ServiceCart/ServiceCart';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [limitServices, setLimitServices] = useState([]);
@@ -13,14 +14,18 @@ const Services = () => {
     }, [])
 
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-            {/* <h1 className="text-4xl">this is service : {limitServices.length}</h1> */}
-            {
-                limitServices.map(limitService => <ServiceCart
-                    key={limitService._id}
-                    limitService={limitService}
-                ></ServiceCart>)
-            }
+        <div>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
+                {
+                    limitServices.map(limitService => <ServiceCart
+                        key={limitService._id}
+                        limitService={limitService}
+                    ></ServiceCart>)
+                }
+            </div>
+            <div className='text-center mt-5'>
+                <button className="btn btn-primary"> <Link to='/allservices'>See All Services</Link></button>
+            </div>
         </div>
     );
 };
