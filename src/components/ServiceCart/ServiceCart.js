@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCart = ({ limitService }) => {
     const { description, img, price, title, _id } = limitService;
     // console.log(description, img, price, title, _id);
 
-    const text = description.slice(0, 100);
-    console.log(text);
 
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -20,7 +19,7 @@ const ServiceCart = ({ limitService }) => {
                 </p>
                 <div className="card-actions justify-around">
                     <button className="btn btn-primary">Buy Now : $ {price} </button>
-                    <button className="btn btn-primary">View details </button>
+                    <button className="btn btn-primary"> <Link to={`/serviceDetail/${_id}`}>View Details</Link>  </button>
                 </div>
             </div>
         </div>
