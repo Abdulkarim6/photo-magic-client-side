@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceCart = ({ limitService }) => {
     const { description, img, price, title, _id } = limitService;
@@ -8,7 +10,11 @@ const ServiceCart = ({ limitService }) => {
 
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="imagebb" /></figure>
+            <PhotoProvider>
+                <PhotoView src={img}>
+                    <figure><img src={img} style={{ objectFit: 'cover' }} alt="imagebb" /></figure>
+                </PhotoView>
+            </PhotoProvider>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>
