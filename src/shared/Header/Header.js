@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
+    const menuItems = <>
+        {
+            user?.email ?
+                <>
+                    <li className='font-semibold'><Link to='#/'>My Service</Link></li>
+                    <li className='font-semibold'><Link to='#/'>My Reviews</Link></li>
+                    <li className='font-semibold'>
+                        <button onClick={handleLogOut} className="btn btn-ghost">Sign Out</button>
+                    </li>
+                </>
+                :
+                <li className='font-semibold'><Link to='/login'>Login</Link></li>
+        }
+    </>
     return (
         <div className="navbar bg-neutral text-neutral-content rounded">
             <div className="navbar-start">
@@ -25,9 +48,10 @@ const Header = () => {
 
                             </ul>
                         </li>
-                        <li><Link>My Service</Link></li>
+                        {/* <li><Link>My Service</Link></li>
                         <li><Link>My Reviews</Link></li>
-                        <li><Link>Sign Out</Link></li>
+                        <li><Link>Sign Out</Link></li> */}
+                        {menuItems}
                     </ul>
                 </div>
                 <a href='#/' className="btn btn-ghost normal-case text-xl">Photo Magic</a>
@@ -48,23 +72,10 @@ const Header = () => {
 
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal p-0">
-                    {/* <li tabIndex={0}>
-                        <a href='#/'>
-                            Servicessssss
-                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                        </a>
-                        <ul className="p-2 w-52 bg-neutral text-neutral-content">
-                            <li><Link className='p-2 text-base'>Wedding Photography</Link></li>
-                            <li> <Link className='p-2 text-base'>Fashion Photography</Link></li>
-                            <li><Link className='p-2 text-base'>Product Photography</Link></li>
-                            <li><Link className='p-2 text-base'>Food Photography</Link></li>
-                            <li><Link className='p-2 text-base'>Sports Photography</Link></li>
-                            <li><Link className='p-2 text-base'>Wild Photographer</Link></li>
-                        </ul>
-                    </li> */}
-                    <li><Link>My Service</Link></li>
+                    {/* <li><Link>My Service</Link></li>
                     <li><Link>My Reviews</Link></li>
-                    <li><Link>Sign Out</Link></li>
+                    <li><Link>Sign Out</Link></li> */}
+                    {menuItems}
                 </ul>
             </div>
             <div className="navbar-end">
