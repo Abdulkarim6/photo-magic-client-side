@@ -4,8 +4,6 @@ const MyReviewsCart = ({ eatchReview }) => {
     const { description, email, img, photoURL, price, review, service, serviceName, user, _id } = eatchReview;
 
 
-
-
     return (
         <div className='bg-base-200 rounded p-2 grid md:grid-cols-3 items-center mt-5 mb-5'>
             {/* user */}

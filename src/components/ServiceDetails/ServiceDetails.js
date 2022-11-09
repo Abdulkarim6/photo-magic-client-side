@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useLoaderData } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import ReviewForm from '../ReviewForm/ReviewForm';
 
 const ServiceDetails = () => {
     const { description, img, price, title, _id } = useLoaderData();
     const service = { description, img, price, title, _id };
+
+    // console.log(_id);
+
+    // const { user } = useContext(AuthContext);
+
+    // console.log(user);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?_id=${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                // setReviews(data);
+            })
+    }, [_id]);
+
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl mt-5 grid lg:grid-cols-2">
