@@ -15,8 +15,8 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='#/'>My Service</Link></li>
                     <li className='font-semibold'><Link to='#/'>My Reviews</Link></li>
+                    <li className='font-semibold'><Link to='#/'>Add Service</Link></li>
                     <li className='font-semibold'>
                         <button onClick={handleLogOut} className="btn btn-ghost">Sign Out</button>
                     </li>
@@ -45,12 +45,8 @@ const Header = () => {
                                 <Link className='p-2 text-base'>Food Photography</Link>
                                 <Link className='p-2 text-base'>Sports Photography</Link>
                                 <Link className='p-2 text-base'>Wild Photography</Link>
-
                             </ul>
                         </li>
-                        {/* <li><Link>My Service</Link></li>
-                        <li><Link>My Reviews</Link></li>
-                        <li><Link>Sign Out</Link></li> */}
                         {menuItems}
                     </ul>
                 </div>
@@ -58,7 +54,7 @@ const Header = () => {
             </div>
 
             <div className="dropdown dropdown-bottom dropdown-end hidden lg:flex">
-                <label tabIndex={0} className="btn m-1">Click</label>
+                <label tabIndex={0} className="btn m-1"><Link to='/'>Services</Link></label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-neutral text-neutral-content rounded-box w-52">
                     <li><Link className='p-2 text-base'>Wedding Photography</Link></li>
                     <li> <Link className='p-2 text-base'>Fashion Photography</Link></li>
@@ -69,12 +65,8 @@ const Header = () => {
                 </ul>
             </div>
 
-
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal p-0">
-                    {/* <li><Link>My Service</Link></li>
-                    <li><Link>My Reviews</Link></li>
-                    <li><Link>Sign Out</Link></li> */}
                     {menuItems}
                 </ul>
             </div>

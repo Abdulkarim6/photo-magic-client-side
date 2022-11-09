@@ -5,10 +5,12 @@ import signupimg from '../../images/photography.jpg'
 
 
 const SignUp = () => {
-    const { createUser, signInGoogle } = useContext(AuthContext)
+    const { createUser, signInGoogle, handleUpdateProfile } = useContext(AuthContext)
     const handleSignup = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
+        const PhotoURl = form.PhotoURl.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -16,8 +18,16 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                updateUserProfile(name, PhotoURl);
             })
             .catch(err => console.error(err))
+    };
+
+    const updateUserProfile = (name, PhotoURl) => {
+        const profile = { displayName: name, photoURL: PhotoURl }
+        handleUpdateProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     const handleGoogleSignup = () => {
@@ -43,6 +53,12 @@ const SignUp = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name='name' placeholder="Your Name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URl</span>
+                            </label>
+                            <input type="text" name='PhotoURl' placeholder="Your PhotoURl" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
