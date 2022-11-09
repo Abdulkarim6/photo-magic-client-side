@@ -3,8 +3,9 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ReviewForm = ({ service }) => {
     const { user } = useContext(AuthContext);
-    const { displayName, email, phoneNumber, photoURL, uid } = user;
+    const { displayName, email, photoURL, uid } = user;
     const { description, img, price, title, _id } = service;
+
 
     const handleForReview = (event) => {
         event.preventDefault()
@@ -14,14 +15,36 @@ const ReviewForm = ({ service }) => {
 
         // for reviews send to database
         const Reviews = {
-            // service: _id,
-            // serviceName: title,
-            // price,
-            // customer: name,
-            // phone,
-            // email,
-            // message
+            service: _id,
+            serviceName: title,
+            price,
+            description,
+            img,
+
+            user: displayName,
+            email,
+            photoURL,
+
+            review
         };
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(Reviews)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('Thanks for your Review')
+                }
+                form.reset();
+                console.log(data)
+            })
+            .catch(err => console.error(err))
+
     }
 
     return (
