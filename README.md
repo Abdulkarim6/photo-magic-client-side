@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+Live link : ()
+
+code link : (https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Abdulkarim6)
+
+### `Features`
+.Firebase authentication
+.clickable implement
+.responsive for mobile and desktop
+.private route
+.delete operation implement
+.user can service create
+### `Technologis`
+client : React, firebase, hero Icons, tailwindCSS, daisyUI, React-Photo-View, .env.local,
+
+server : Node ,cors, Vercel, mongodb, dotenv
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +85,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
