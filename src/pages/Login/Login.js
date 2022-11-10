@@ -1,12 +1,22 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
-import loginimg from '../../images/login.jpg'
-import loginimgt from '../../images/photography.jpg'
+import loginimg from '../../images/login.jpg';
+import loginimgt from '../../images/photography.jpg';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import useTitle from '../../components/Hooks/useTitle';
 
 
 const Login = () => {
+    useTitle('login')
+
     const { signIn } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -17,7 +27,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                // form.reset()
+                form.reset()
+                navigate(from, { replace: true })
                 console.log(user);
 
             })

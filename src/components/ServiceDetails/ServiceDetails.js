@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../Hooks/useTitle';
 import Review from '../Review/Review';
 import ReviewForm from '../ReviewForm/ReviewForm';
 
 const ServiceDetails = () => {
+    useTitle('serviceDetail');
     const [reviews, setReviews] = useState([]);
+    const { user } = useContext(AuthContext);
 
 
     const { description, img, price, title, _id } = useLoaderData();
@@ -36,6 +39,7 @@ const ServiceDetails = () => {
             <div>
                 <div>
                     {
+
                         reviews.map(serviceReview => <Review
                             key={serviceReview._id}
                             serviceReview={serviceReview}
@@ -43,9 +47,13 @@ const ServiceDetails = () => {
                     }
                 </div>
 
-                <div>
-                    <h1 className="4xl">this is review form</h1>
-                    <ReviewForm service={service}></ReviewForm>
+                <div className='mt-2 mb-2'>
+                    {
+                        user?
+                            <ReviewForm service={service}></ReviewForm>
+                            :
+                            <h3 className='text-xl'>Please <Link to='/login' className='text-blue-500'><strong>login</strong></Link> to add a review</h3>
+                    }
                 </div>
             </div>
         </div>

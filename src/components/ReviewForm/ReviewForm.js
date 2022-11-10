@@ -52,7 +52,7 @@ const ReviewForm = ({ service }) => {
             <form onSubmit={handleForReview} >
                 <div className='my-5'>
                     <textarea name='review' className="textarea textarea-bordered w-full" placeholder="Your Message"></textarea>
-                    <input className="btn btn-primary" type="submit" value="Place your order" />
+                    <input className="btn btn-primary" type="submit" value="send review" />
                 </div>
             </form>
         </div>

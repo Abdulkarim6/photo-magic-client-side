@@ -22,7 +22,6 @@ const AuthProvider = ({ children }) => {
     };
 
     const logOut = () => {
-        // localStorage.removeItem('geniusToken')
         return signOut(auth);
     };
 
@@ -39,14 +38,14 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             // console.log(currentUser);
             setUser(currentUser)
-            // setLoading(false)
+            setLoading(false)
         });
         return () => {
             unsubscribe();
         }
     }, [])
 
-    const authInfo = { user, createUser, signIn, signInGoogle, logOut ,handleUpdateProfile}
+    const authInfo = { user, createUser, signIn, signInGoogle, logOut,loading ,handleUpdateProfile}
 
     return (
         <AuthContext.Provider value={authInfo}>

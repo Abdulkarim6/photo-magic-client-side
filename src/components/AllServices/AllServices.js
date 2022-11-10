@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AllServicescart from '../AllServicescart/AllServicescart';
+import useTitle from '../Hooks/useTitle';
 
 const AllServices = () => {
+    useTitle('allservices');
     const [Services, setServices] = useState([]);
 
     useEffect(() => {

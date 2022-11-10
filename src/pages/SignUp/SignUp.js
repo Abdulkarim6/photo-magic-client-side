@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../components/Hooks/useTitle';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import signupimg from '../../images/photography.jpg'
 
 
 const SignUp = () => {
+    useTitle('signUp');
     const { createUser, signInGoogle, handleUpdateProfile } = useContext(AuthContext)
     const handleSignup = event => {
         event.preventDefault();
