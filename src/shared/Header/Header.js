@@ -71,9 +71,6 @@ const Header = () => {
                     {menuItems}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a href='#/' className="btn">Get started</a>
-            </div>
         </div>
     );
 };

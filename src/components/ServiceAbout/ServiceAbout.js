@@ -9,9 +9,8 @@ const ServiceAbout = () => {
                     <img src={aboutimg} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 </div>
                 <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-
+                    <h1 className="text-5xl font-bold">My Services about</h1>
+                    <p className="py-6">I am professional PhotoGraper !!! My experience of 10 years.If you need ? You can Hair me</p>
 
                     <div className="stats shadow">
 

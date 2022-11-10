@@ -36,7 +36,7 @@ const ServiceDetails = () => {
                 </div>
             </div>
             <div>
-                <div>
+                <div className='mb-7'>
                     {
 
                         reviews.map(serviceReview => <Review

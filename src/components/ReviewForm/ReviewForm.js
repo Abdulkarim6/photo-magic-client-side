@@ -43,8 +43,7 @@ const ReviewForm = ({ service }) => {
                 form.reset();
                 console.log(data)
             })
-            .catch(err => console.error(err))
-
+            .catch(err => console.error(err));
     }
 
     return (
