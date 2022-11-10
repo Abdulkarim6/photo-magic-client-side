@@ -1,25 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import Review from '../Review/Review';
 import ReviewForm from '../ReviewForm/ReviewForm';
 
 const ServiceDetails = () => {
+    const [reviews, setReviews] = useState([]);
+
+
     const { description, img, price, title, _id } = useLoaderData();
     const service = { description, img, price, title, _id };
-
-    // console.log(_id);
-
-    // const { user } = useContext(AuthContext);
-
-    // console.log(user);
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?_id=${_id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                // setReviews(data);
+                setReviews(data);
             })
     }, [_id]);
 
@@ -37,8 +35,14 @@ const ServiceDetails = () => {
             </div>
             <div>
                 <div>
-                    <h1 className="4xl">this is review </h1>
+                    {
+                        reviews.map(serviceReview => <Review
+                            key={serviceReview._id}
+                            serviceReview={serviceReview}
+                        ></Review>)
+                    }
                 </div>
+
                 <div>
                     <h1 className="4xl">this is review form</h1>
                     <ReviewForm service={service}></ReviewForm>

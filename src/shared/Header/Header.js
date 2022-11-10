@@ -34,7 +34,7 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow  bg-neutral text-neutral-content rounded-box w-52">
                         <li tabIndex={0}>
-                            <a href='#/' className="justify-between">
+                            <a href='/allservices' className="justify-between">
                                 Services
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
@@ -54,7 +54,7 @@ const Header = () => {
             </div>
 
             <div className="dropdown dropdown-bottom dropdown-end hidden lg:flex">
-                <label tabIndex={0} className="btn m-1"><Link to='/'>Services</Link></label>
+                <label tabIndex={0} className="btn m-1"><Link to='/allservices'>Services</Link></label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-neutral text-neutral-content rounded-box w-52">
                     <li><Link className='p-2 text-base'>Wedding Photography</Link></li>
                     <li> <Link className='p-2 text-base'>Fashion Photography</Link></li>
