@@ -23,7 +23,7 @@ const ServiceCart = ({ limitService }) => {
                 </p>
                 <div className="card-actions justify-around">
                     <button className="btn btn-primary">Buy Now : $ {price} </button>
-                    <button className="btn btn-primary"> <Link to={`/serviceDetail/${_id}`}>View Details</Link>  </button>
+                    <Link to={`/serviceDetail/${_id}`}><button className="btn btn-primary">View Details </button></Link>
                 </div>
             </div>
         </div>

@@ -1,10 +1,7 @@
 import React from 'react';
 
 const Review = ({ serviceReview }) => {
-    console.log(serviceReview);
     const { email, photoURL, review, user } = serviceReview;
-    console.log(email, photoURL, review, user);
-
 
     return (
         <div className='bg-base-200 rounded p-2 grid md:grid-cols-3 items-center mt-5 mb-5'>
