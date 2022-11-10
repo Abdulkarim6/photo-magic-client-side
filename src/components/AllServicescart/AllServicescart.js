@@ -17,7 +17,7 @@ const AllServicescart = ({ Service }) => {
                 <p>
                     {
                         description.length > 100 ?
-                            description.slice(0, 100) : description
+                            description.slice(0, 100) + '...' : description
                     }
                 </p>
                 <div className="card-actions justify-around">

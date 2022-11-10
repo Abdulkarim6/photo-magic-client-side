@@ -7,7 +7,7 @@ import Review from '../Review/Review';
 import ReviewForm from '../ReviewForm/ReviewForm';
 
 const ServiceDetails = () => {
-    useTitle('serviceDetail');
+    useTitle('serviceDetail')
     const [reviews, setReviews] = useState([]);
     const { user } = useContext(AuthContext);
 

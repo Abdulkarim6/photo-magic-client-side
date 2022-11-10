@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import loginimg from '../../images/login.jpg';
-import loginimgt from '../../images/photography.jpg';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import useTitle from '../../components/Hooks/useTitle';

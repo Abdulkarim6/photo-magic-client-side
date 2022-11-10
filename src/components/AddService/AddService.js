@@ -2,7 +2,7 @@ import React from 'react';
 import useTitle from '../Hooks/useTitle';
 
 const AddService = () => {
-      useTitle('addService');
+    useTitle('addService');
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;
@@ -37,19 +37,13 @@ const AddService = () => {
                 console.log(data)
             })
             .catch(err => console.error(err))
-
-
     }
 
     return (
         <>
             <div className="hero bg-base-200">
                 <div className="hero-content w-full flex-col lg:flex-row-reverse">
-                    {/* <div className="text-center lg:text-left p-5">
-                            <img className='3/4' src={loginimg} alt="" />
-                            <img className='3/4' alt="" />
-                        </div> */}
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                         <div className="card-body">
                             <h1 className="text-5xl font-bold">Add Service</h1>
                             <form onSubmit={handleAddService} className="card-body">

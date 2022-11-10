@@ -3,7 +3,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ReviewForm = ({ service }) => {
     const { user } = useContext(AuthContext);
-    const { displayName, email, photoURL, uid } = user;
+    const { displayName, email, photoURL} = user;
     const { description, img, price, title, _id } = service;
 
 

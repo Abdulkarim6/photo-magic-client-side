@@ -24,11 +24,6 @@ const Review = ({ serviceReview }) => {
             <div>
                 <p>Review : {review}</p>
             </div>
-            {/* edit */}
-            <div className='flex justify-end'>
-                <button className="btn btn-sm btn-warning">Edit</button>
-                <button className="btn btn-sm btn-error ml-2">Delete</button>
-            </div>
         </div>
     );
 };

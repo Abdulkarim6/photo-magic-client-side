@@ -1,7 +1,8 @@
 import React from 'react';
 
-const MyReviewsCart = ({ eatchReview }) => {
-    const { description, email, img, photoURL, price, review, service, serviceName, user, _id } = eatchReview;
+const MyReviewsCart = ({ eatchReview,handleDelete }) => {
+    const { email, photoURL, review, serviceName, user, _id } = eatchReview;
+
 
 
     return (
@@ -26,7 +27,7 @@ const MyReviewsCart = ({ eatchReview }) => {
             {/* edit */}
             <div className='flex justify-end'>
                 <button className="btn btn-sm btn-warning">Edit</button>
-                <button className="btn btn-sm btn-error ml-2">Delete</button>
+                <button  onClick={() => handleDelete(_id)} className="btn btn-sm btn-error ml-2">Delete</button>
             </div>
         </div>
     );

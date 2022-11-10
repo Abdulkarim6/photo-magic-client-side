@@ -6,25 +6,43 @@ import MyReviewsCart from './MyReviewsCart';
 const MyReviews = () => {
     useTitle('myReviews');
     const [MyReviews, setMyReviews] = useState([]);
-    // console.log(reviews);
 
     const { user } = useContext(AuthContext);
-    // console.log(user);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 setMyReviews(data);
             })
     }, [user?.email]);
+
+    const handleDelete = id => {
+        const procced = window.confirm('Are you sure, you want to cancel this order')
+        if (procced) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = MyReviews.filter(odr => odr._id !== id);
+                        setMyReviews(remaining);
+                        alert('deleted successfuly')
+                    }
+                    console.log(data);
+                })
+        }
+    }
+
+
     return (
         <div>
             {
                 MyReviews.map(eatchReview => <MyReviewsCart
                     key={eatchReview._id}
                     eatchReview={eatchReview}
+                    handleDelete={handleDelete}
                 ></MyReviewsCart>)
             }
         </div>
