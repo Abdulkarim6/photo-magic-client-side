@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const service = { description, img, price, title, _id };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?_id=${_id}`)
+        fetch(`https://photo-magic-server-side.vercel.app/reviews?_id=${_id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

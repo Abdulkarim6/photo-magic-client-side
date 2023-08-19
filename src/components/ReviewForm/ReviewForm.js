@@ -28,7 +28,7 @@ const ReviewForm = ({ service }) => {
             review
         };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://photo-magic-server-side.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

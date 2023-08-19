@@ -10,7 +10,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
+        fetch(`https://photo-magic-server-side.vercel.app/myreviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyReviews(data);
@@ -20,7 +20,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const procced = window.confirm('Are you sure, you want to cancel this order')
         if (procced) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://photo-magic-server-side.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

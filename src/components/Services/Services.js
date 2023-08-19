@@ -6,11 +6,17 @@ const Services = () => {
     const [limitServices, setLimitServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => {
-                setLimitServices(data.limitServices);
-            })
+        fetch('https://photo-magic-server-side.vercel.app/services', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(response => {
+                setLimitServices(response.limitServices);
+                console.log(response.limitServices);
+            });
     }, [])
 
     return (

@@ -7,12 +7,14 @@ const AllServices = () => {
     const [Services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://photo-magic-server-side.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data.services);
+                // console.log(data.services, 'data');
             })
     }, [])
+
     return (
         <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center mt-5'>
             {

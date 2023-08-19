@@ -38,7 +38,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/serviceDetail/:id', element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://photo-magic-server-side.vercel.app/services/${params.id}`)
             },
         ]
     }
