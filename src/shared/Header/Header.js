@@ -39,7 +39,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <level className="btn btn-ghost normal-case text-xl">Photo Magic</level>
+                <strong className="btn btn-ghost normal-case text-xl">Photo Magic</strong>
             </div>
 
             <div className="navbar-end hidden lg:flex">

@@ -11,7 +11,6 @@ const ReviewForm = ({ service }) => {
         event.preventDefault()
         const form = event.target;
         const review = form.review.value;
-        console.log(review);
 
         // for reviews send to database
         const Reviews = {
@@ -41,7 +40,6 @@ const ReviewForm = ({ service }) => {
                     alert('Thanks for your Review')
                 }
                 form.reset();
-                console.log(data)
             })
             .catch(err => console.error(err));
     }

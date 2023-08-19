@@ -16,7 +16,7 @@ const AllServices = () => {
     }, [])
 
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center mt-5'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-6 justify-items-center mt-5'>
             {
                 Services.map(Service => <AllServicescart
                     key={Service._id}

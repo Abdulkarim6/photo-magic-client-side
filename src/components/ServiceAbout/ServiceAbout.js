@@ -9,11 +9,10 @@ const ServiceAbout = () => {
                     <img src={aboutimg} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 </div>
                 <div>
-                    <h1 className="text-5xl font-bold">My Services about</h1>
-                    <p className="py-6">I am professional PhotoGraper !!! My experience of 10 years.If you need ? You can Hair me</p>
+                    <h1 className="text-3xl lg:text-5xl font-bold">My Services about</h1>
+                    <p className="py-6 text-lg">I am professional PhotoGraper !!! My experience of 10 years.If you need ? You can Hair me</p>
 
-                    <div className="stats shadow">
-
+                    <div className="stats shadowoverflow-scroll">
                         <div className="stat">
                             <div className="stat-title">Total Orders</div>
                             <div className="stat-value">31K</div>
@@ -30,8 +29,6 @@ const ServiceAbout = () => {
                             <div className="stat-title">Reviews</div>
                             <div className="stat-value">1,200</div>
                             <div className="rating gap-1">
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" disabled />
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" disabled />
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" disabled />
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" disabled />
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-lime-400" disabled />

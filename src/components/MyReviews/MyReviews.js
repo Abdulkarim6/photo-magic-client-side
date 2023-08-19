@@ -30,20 +30,20 @@ const MyReviews = () => {
                         setMyReviews(remaining);
                         alert('deleted successfuly')
                     }
-                    console.log(data);
                 })
         }
     }
 
-
     return (
         <div>
             {
-                MyReviews.map(eatchReview => <MyReviewsCart
-                    key={eatchReview._id}
-                    eatchReview={eatchReview}
-                    handleDelete={handleDelete}
-                ></MyReviewsCart>)
+                !MyReviews?.length ? <h3 className='text-3xl text-center text-sky-500 font-bold mt-10'>You have no reviews</h3>
+                    :
+                    MyReviews.map(eatchReview => <MyReviewsCart
+                        key={eatchReview._id}
+                        eatchReview={eatchReview}
+                        handleDelete={handleDelete}
+                    ></MyReviewsCart>)
             }
         </div>
     );

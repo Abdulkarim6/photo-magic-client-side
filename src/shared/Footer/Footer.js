@@ -4,7 +4,7 @@ import img from '../../images/aboutimgt.jpg'
 const Footer = () => {
     // width="50" height="50"
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content mt-5 rounded mb-0">
+        <footer className="footer sticky top-[100vh] p-10 bg-neutral text-neutral-content mt-5 rounded mb-0">
             <div>
                 <img width="80" height="80" className='rounded' src={img} alt="" />
                 <p>Abdul Karim<br />Copyright © 2022 - All right reserved</p>

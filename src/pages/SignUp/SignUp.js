@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../components/Hooks/useTitle';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import signupimg from '../../images/photography.jpg'
@@ -7,7 +7,13 @@ import signupimg from '../../images/photography.jpg'
 
 const SignUp = () => {
     useTitle('signUp');
-    const { createUser, signInGoogle, handleUpdateProfile } = useContext(AuthContext)
+    const { createUser, signInGoogle, handleUpdateProfile } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
     const handleSignup = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +25,6 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 updateUserProfile(name, PhotoURl);
             })
             .catch(err => console.error(err))
@@ -28,7 +33,9 @@ const SignUp = () => {
     const updateUserProfile = (name, PhotoURl) => {
         const profile = { displayName: name, photoURL: PhotoURl }
         handleUpdateProfile(profile)
-            .then(() => { })
+            .then(() => {
+                navigate(from, { replace: true })
+            })
             .catch(error => console.error(error))
     }
 
@@ -36,7 +43,7 @@ const SignUp = () => {
         signInGoogle()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
     }
@@ -79,7 +86,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <input onClick={handleGoogleSignup} className="btn btn-primary w-3/4 mx-auto" type="submit" value="SignUp with Google" />
-                    <p className='text-center font-semibold mb-5'>Allready have an account<Link className='text-orange-700 font-bold' to='/login'>Login</Link></p>
+                    <p className='text-center font-semibold mb-5'>Allready have an account? <Link className='text-orange-700 font-bold' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>

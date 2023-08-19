@@ -19,8 +19,6 @@ const AddService = () => {
             price: price
         };
 
-        console.log(AddService);
-
         fetch('https://photo-magic-server-side.vercel.app/services', {
             method: 'POST',
             headers: {
@@ -34,7 +32,6 @@ const AddService = () => {
                     alert('Thanks for Add your service')
                 }
                 // form.reset();
-                console.log(data)
             })
             .catch(err => console.error(err))
     }

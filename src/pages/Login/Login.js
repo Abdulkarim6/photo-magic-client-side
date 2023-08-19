@@ -28,7 +28,6 @@ const Login = () => {
                 const user = result.user;
                 form.reset()
                 navigate(from, { replace: true })
-                console.log(user);
 
             })
             .catch(err => console.error(err))
@@ -63,7 +62,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Submit" />
                             </div>
                         </form>
-                        <p className='text-center font-semibold mb-5'>If you are new person? Please <Link className='text-orange-700 font-bold' to='/signup'>Sign Up</Link></p>
+                        <p className='text-center font-semibold mb-5'>If you have no account? Please <Link className='text-orange-700 font-bold' to='/signup'>Sign Up</Link></p>
                     </div>
                 </div>
             </div>

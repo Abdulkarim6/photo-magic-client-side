@@ -15,13 +15,12 @@ const Services = () => {
             .then(response => response.json())
             .then(response => {
                 setLimitServices(response.limitServices);
-                console.log(response.limitServices);
             });
     }, [])
 
     return (
         <div>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-6 justify-items-center'>
                 {
                     limitServices.map(limitService => <ServiceCart
                         key={limitService._id}

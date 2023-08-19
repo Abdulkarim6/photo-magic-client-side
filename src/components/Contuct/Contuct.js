@@ -1,9 +1,9 @@
 import React from 'react';
-import { CalendarIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { CalendarIcon, PhoneIcon, EnvelopeIcon, ArrowDownIcon } from '@heroicons/react/24/solid'
 
 const Contuct = () => {
     return (
-        <div className='grid justify-items-center lg:grid-cols-3 gap-6 my-6 bg-black text-white py-24 px-16 rounded-xl '>
+        <div className='grid lg:grid-cols-3 gap-6 my-6 bg-gray-700 text-white font-medium text-lg py-24 px-16 rounded-xl '>
             <div className='flex items-center'>
                 <div className='mr-3'>
                     <CalendarIcon className="h-6 w-6 text-blue-500" />
@@ -27,8 +27,8 @@ const Contuct = () => {
                     <EnvelopeIcon className="h-6 w-6 text-blue-500" />
                 </div>
                 <div>
-                    <p>Need a Service? my address Gmail</p>
-                    <h4>Mdhossainjwel687@gmail.com</h4>
+                    <p className='flex'>Need a Service? My Gmail<ArrowDownIcon className="h-6 w-6 ml-2" /> </p>
+                    <h4>mdhossainjwel687@gmail.com</h4>
                 </div>
             </div>
         </div>

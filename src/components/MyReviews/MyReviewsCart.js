@@ -4,7 +4,6 @@ const MyReviewsCart = ({ eatchReview,handleDelete }) => {
     const { email, photoURL, review, serviceName, user, _id } = eatchReview;
 
 
-
     return (
         <div className='bg-base-200 rounded p-2 grid md:grid-cols-3 items-center mt-5 mb-5'>
             {/* user */}
@@ -26,7 +25,7 @@ const MyReviewsCart = ({ eatchReview,handleDelete }) => {
             </div>
             {/* edit */}
             <div className='flex justify-end'>
-                <button className="btn btn-sm btn-warning">Edit</button>
+                <button className="btn btn-sm btn-info">Edit</button>
                 <button  onClick={() => handleDelete(_id)} className="btn btn-sm btn-error ml-2">Delete</button>
             </div>
         </div>

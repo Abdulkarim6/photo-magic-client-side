@@ -18,7 +18,6 @@ const ServiceDetails = () => {
         fetch(`https://photo-magic-server-side.vercel.app/reviews?_id=${_id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setReviews(data);
             })
     }, [_id]);
